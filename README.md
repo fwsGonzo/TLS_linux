@@ -7,6 +7,15 @@ sha256          273751.41k   654760.75k  1297437.27k  1719499.43k  1899651.07k
 sha512           56248.84k   224978.45k   394397.87k   587907.07k   689070.08k
 ```
 
+> apache2 with SSL
+```
+$ httperf --ssl --server 127.0.0.1 --port 443 --hog --num-conns=40 --num-calls=1
+Connection rate: 530.3 conn/s (1.9 ms/conn, <=1 concurrent connections)
+
+$ httperf --ssl --server 127.0.0.1 --port 443 --hog --num-conns=40 --num-calls=1000
+Request rate: 6026.6 req/s (0.2 ms/req)
+```
+
 > tls-speed
 ```
 Starting TLS performance test using:
