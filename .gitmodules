@@ -1,0 +1,3 @@
+[submodule "tls-speed"]
+	path = tls-speed
+	url = https://github.com/jeagle/tls-speed.git
