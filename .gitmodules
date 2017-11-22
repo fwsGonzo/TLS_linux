@@ -1,3 +1,6 @@
 [submodule "tls-speed"]
 	path = tls-speed
-	url = https://github.com/jeagle/tls-speed.git
+	url = https://github.com/fwsGonzo/tls-speed.git
+[submodule "botan"]
+	path = botan
+	url = https://github.com/randombit/botan.git
