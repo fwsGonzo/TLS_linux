@@ -16,6 +16,22 @@ $ httperf --ssl --server 127.0.0.1 --port 443 --hog --num-conns=40 --num-calls=1
 Request rate: 6026.6 req/s (0.2 ms/req)
 ```
 
+> openssl s_time against botan TLS server
+```
+$ sudo ./botan tls_server test.cert test.key
+$ openssl s_time -connect 127.0.0.1:443
+478 connections in 0.38s; 1257.89 connections/user sec, bytes read 0
+478 connections in 31 real seconds, 0 bytes read per connection
+```
+
+> openssl s_time against openssl TLS server
+```
+$ sudo openssl s_server -accept 443 -cert test.cert -key test.key
+$ openssl s_time -connect 127.0.0.1:443
+10107 connections in 4.83s; 2092.55 connections/user sec, bytes read 0
+10107 connections in 31 real seconds, 0 bytes read per connection
+```
+
 > tls-speed
 ```
 Starting TLS performance test using:
